@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>이의열의 블로그</title>
+
+<!-- 구글 폰트 Merriweather 불러오기 -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Merriweather', serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .clickable {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .clickable:hover {
+    background-color: #e0e0e0;
+  }
+  hr.divider {
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 0;
+  }
+  .header {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+  }
+  .header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+  .header p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="clickable" onclick="openDreamsTab()">최근 게시글</div>
+
+  <hr class="divider" />
+
+  <div class="header">
+    <h1>이의열의 블로그</h1>
+    <p>안녕하세요! 저는 이의열입니다. 제 블로그에 방문해 주셔서 감사합니다. 이곳에서 저에 대한 이야기와 다양한 게시글을 만나보실 수 있습니다.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="clickable" onclick="openProfileTab()">프로필</div>
+</div>
+
+<script>
+  function openDreamsTab() {
+    const htmlContent = `
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>나의 꿈, 목표, 취미</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Merriweather', serif;
+    margin: 20px;
+    background: #f9f9f9;
+    color: #333;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 900;
+  }
+  ul {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+  <h2>나의 꿈, 나의 목표, 나의 취미</h2>
+  <ul>
+    <li><strong>나의 꿈:</strong> 세계적인 과학자가 되는 것</li>
+    <li><strong>나의 목표:</strong> 매일 꾸준히 공부하고 새로운 지식을 쌓기</li>
+    <li><strong>나의 취미:</strong> 독서, 코딩, 여행하기</li>
+  </ul>
+  <button onclick="window.close()">창 닫기</button>
+</body>
+</html>
+    `;
+    const blob = new Blob([htmlContent], {type: 'text/html'});
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+  }
+
+  function openProfileTab() {
+    const htmlContent = `
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>나의 프로필</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Merriweather', serif;
+    margin: 20px;
+    background: #f9f9f9;
+    color: #333;
+    display: flex;
+    max-width: 600px;
+    flex-wrap: wrap;
+  }
+  .photo {
+    flex: 0 0 150px;
+    height: 180px;
+    background-color: #ddd;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .info {
+    flex: 1 1 300px;
+  }
+  .info h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #444;
+    font-weight: 900;
+  }
+  .info p {
+    margin: 6px 0;
+    font-size: 1.1rem;
+  }
+  .info strong {
+    display: inline-block;
+    width: 80px;
+    color: #555;
+  }
+  button {
+    margin-top: 30px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: block;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+  <div class="photo">
+    <img src="" alt="프로필 사진" id="profileImage" />
+    <noscript>사진 영역</noscript>
+  </div>
+  <div class="info">
+    <h2>프로필 정보</h2>
+    <p><strong>아이디:</strong> your_id_here</p>
+    <p><strong>이름:</strong> 이의열</p>
+    <p><strong>생년월일:</strong> 1990-01-01</p>
+    <p><strong>자기소개:</strong> 안녕하세요, 저는 과학과 기술에 관심이 많은 이의열입니다. 항상 배우고 성장하는 것을 즐깁니다.</p>
+    <button onclick="window.close()">창 닫기</button>
+  </div>
+  <script>
+    const profileImg = document.getElementById('profileImage');
+    // 실제 사진 경로 넣으려면 아래 주석 해제 후 경로 수정하세요
+    // profileImg.src = 'profile.jpg';
+    profileImg.alt = '프로필 사진이 없습니다.';
+  </script>
+</body>
+</html>
+    `;
+    const blob = new Blob([htmlContent], {type: 'text/html'});
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
